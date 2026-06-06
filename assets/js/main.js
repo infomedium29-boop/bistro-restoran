@@ -34,3 +34,25 @@ if (window.gsap && window.ScrollTrigger) {
   const firstCopy = document.querySelector('.copy-1');
   if (firstCopy) firstCopy.style.opacity = '1';
 }
+
+// Sastavlja narudžbu iz padajućih izbornika u jedno polje za Web3Forms
+const orderForm = document.querySelector('form.form');
+if (orderForm) {
+  orderForm.addEventListener('submit', (event) => {
+    const rows = [...orderForm.querySelectorAll('.order-row')];
+    const selectedItems = rows.map((row) => {
+      const dish = row.querySelector('.dish-select')?.value || '';
+      const qty = Number(row.querySelector('.dish-qty')?.value || 0);
+      if (!dish || qty <= 0) return null;
+      return `${qty}x ${dish}`;
+    }).filter(Boolean);
+
+    const summary = orderForm.querySelector('#narudzba-summary');
+    if (summary) summary.value = selectedItems.join('\n');
+
+    if (summary && !summary.value) {
+      event.preventDefault();
+      alert('Molimo odaberite barem jedno jelo i količinu.');
+    }
+  });
+}

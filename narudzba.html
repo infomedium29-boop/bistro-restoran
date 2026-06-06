@@ -63,9 +63,141 @@
             <input type="time" name="vrijeme" aria-label="Odaberite vrijeme">
           </label>
 
-          <label>Vaša narudžba
-            <textarea name="narudzba" placeholder="Npr. 1x Pizza Rustica, 2x Grill plata, 1x Tagliatelle tartuf..." required></textarea>
-          </label>
+          <div class="order-builder">
+            <div class="order-builder-head">
+              <div>
+                <span class="small-label">Vaša narudžba</span>
+                <h2>Odaberite jela i količinu</h2>
+              </div>
+              <p>Odaberite više jela ako gost želi naručiti kompletan obrok.</p>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_1">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Amfora - 24 €">Grill plata Amfora - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_1" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_2">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Amfora - 24 €">Grill plata Amfora - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_2" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_3">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Amfora - 24 €">Grill plata Amfora - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_3" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <div class="order-row">
+              <label>Jelo
+                <select class="dish-select" name="jelo_4">
+                  <option value="">Odaberite jelo</option>
+                  <optgroup label="Roštilj">
+                    <option value="Grill plata Amfora - 24 €">Grill plata Amfora - 24 €</option>
+                    <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
+                    <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
+                  </optgroup>
+                  <optgroup label="Pizza">
+                    <option value="Margherita - 9 €">Margherita - 9 €</option>
+                    <option value="Capricciosa - 11 €">Capricciosa - 11 €</option>
+                    <option value="Rustica - 13 €">Rustica - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Tjestenina">
+                    <option value="Carbonara - 12 €">Carbonara - 12 €</option>
+                    <option value="Tagliatelle tartuf - 15 €">Tagliatelle tartuf - 15 €</option>
+                    <option value="Penne piletina - 13 €">Penne piletina - 13 €</option>
+                  </optgroup>
+                  <optgroup label="Gotova jela">
+                    <option value="Dnevni gulaš - 11 €">Dnevni gulaš - 11 €</option>
+                    <option value="Losos s povrćem - 18 €">Losos s povrćem - 18 €</option>
+                    <option value="Piletina u umaku - 14 €">Piletina u umaku - 14 €</option>
+                  </optgroup>
+                </select>
+              </label>
+              <label>Količina
+                <input class="dish-qty" type="number" name="kolicina_4" min="0" max="20" value="0">
+              </label>
+            </div>
+
+            <input type="hidden" id="narudzba-summary" name="narudzba" value="">
+          </div>
 
           <label>Napomena
             <textarea name="napomena" placeholder="Posebne želje, alergije, pribor, način plaćanja..."></textarea>
