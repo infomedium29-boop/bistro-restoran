@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Online narudžba | Restoran <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"></title>
+  <title>Online narudžba | Kod Kuma</title>
   <meta name="description" content="Naručite roštilj, pizzu, tjesteninu i gotova jela online." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="logo" href="index.html"><img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"><span>.</span></a>
+    <a class="logo" href="index.html" aria-label="Kod Kuma početna"><img src="assets/img/kod-kuma-logo.png" alt="Kod Kuma logo"></a>
     <button class="menu-toggle" aria-label="Otvori meni">☰</button>
     <nav class="nav">
       <a href="index.html">Početna</a>
@@ -36,8 +37,8 @@
       <div class="container form-wrap">
         <form class="form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="OVDJE_UBACI_WEB3FORMS_ACCESS_KEY">
-          <input type="hidden" name="subject" value="Nova online narudžba - Restoran <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;">">
-          <input type="hidden" name="from_name" value="Restoran <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> web stranica">
+          <input type="hidden" name="subject" value="Nova online narudžba - Kod Kuma">
+          <input type="hidden" name="from_name" value="Kod Kuma web stranica">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
 
           <label>Ime i prezime
@@ -77,7 +78,7 @@
                 <select class="dish-select" name="jelo_1">
                   <option value="">Odaberite jelo</option>
                   <optgroup label="Roštilj">
-                    <option value="Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €">Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €</option>
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
                     <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
                     <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
                   </optgroup>
@@ -108,7 +109,7 @@
                 <select class="dish-select" name="jelo_2">
                   <option value="">Odaberite jelo</option>
                   <optgroup label="Roštilj">
-                    <option value="Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €">Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €</option>
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
                     <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
                     <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
                   </optgroup>
@@ -139,7 +140,7 @@
                 <select class="dish-select" name="jelo_3">
                   <option value="">Odaberite jelo</option>
                   <optgroup label="Roštilj">
-                    <option value="Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €">Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €</option>
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
                     <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
                     <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
                   </optgroup>
@@ -170,7 +171,7 @@
                 <select class="dish-select" name="jelo_4">
                   <option value="">Odaberite jelo</option>
                   <optgroup label="Roštilj">
-                    <option value="Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €">Grill plata <img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"> - 24 €</option>
+                    <option value="Grill plata Kod Kuma - 24 €">Grill plata Kod Kuma - 24 €</option>
                     <option value="Ćevapi u domaćoj lepinji - 10 €">Ćevapi u domaćoj lepinji - 10 €</option>
                     <option value="Ramstek sa žara - 22 €">Ramstek sa žara - 22 €</option>
                   </optgroup>
@@ -219,8 +220,8 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="logo" href="index.html"><img src="logo-kod-kuma.png" alt="Kod Kuma" style="height:70px;width:auto;"><span>.</span></a><p>Premium restoran s toplim ambijentom.</p></div>
-      <div><h4>Kontakt</h4><p>+385 91 000 0000<br>info@restoran-amfora.hr</p></div>
+      <div><a class="logo" href="index.html" aria-label="Kod Kuma početna"><img src="assets/img/kod-kuma-logo.png" alt="Kod Kuma logo"></a><p>Premium restoran s toplim ambijentom.</p></div>
+      <div><h4>Kontakt</h4><p>+385 91 000 0000<br>info@kodkuma.hr</p></div>
       <div><h4>Radno vrijeme</h4><p>Pon - Ned<br>10:00 - 23:00</p></div>
     </div>
   </footer>
