@@ -35,22 +35,89 @@ if (window.gsap && window.ScrollTrigger) {
   if (firstCopy) firstCopy.style.opacity = '1';
 }
 
-// Sastavlja narudžbu iz padajućih izbornika u jedno polje za Web3Forms
+// Online narudžba: dodavanje jela, izračun ukupne cijene i slanje u Web3Forms
 const orderForm = document.querySelector('form.form');
+const orderBuilder = document.querySelector('.order-builder');
+const addDishBtn = document.querySelector('#add-dish');
+const totalEl = document.querySelector('#order-total');
+const totalInput = document.querySelector('#narudzba-total');
+const summaryInput = document.querySelector('#narudzba-summary');
+
+function getDishPrice(dishText) {
+  const match = dishText.match(/-\s*(\d+(?:[,.]\d+)?)\s*€/);
+  return match ? Number(match[1].replace(',', '.')) : 0;
+}
+
+function renumberOrderRows() {
+  document.querySelectorAll('.order-row').forEach((row, index) => {
+    const number = index + 1;
+    const select = row.querySelector('.dish-select');
+    const qty = row.querySelector('.dish-qty');
+    if (select) select.name = `jelo_${number}`;
+    if (qty) qty.name = `kolicina_${number}`;
+  });
+}
+
+function calculateOrder() {
+  if (!orderForm) return { items: [], total: 0 };
+
+  const rows = [...orderForm.querySelectorAll('.order-row')];
+  let total = 0;
+  const items = [];
+
+  rows.forEach((row) => {
+    const dish = row.querySelector('.dish-select')?.value || '';
+    const qty = Number(row.querySelector('.dish-qty')?.value || 0);
+    const price = getDishPrice(dish);
+
+    if (dish && qty > 0) {
+      const lineTotal = price * qty;
+      total += lineTotal;
+      items.push(`${qty}x ${dish} = ${lineTotal.toFixed(2).replace('.', ',')} €`);
+    }
+  });
+
+  const totalText = `${total.toFixed(2).replace('.', ',')} €`;
+  if (totalEl) totalEl.textContent = totalText;
+  if (totalInput) totalInput.value = totalText;
+  if (summaryInput) summaryInput.value = items.join('\n');
+
+  return { items, total };
+}
+
+function createOrderRow() {
+  const firstRow = document.querySelector('.order-row');
+  if (!firstRow) return null;
+
+  const newRow = firstRow.cloneNode(true);
+  const select = newRow.querySelector('.dish-select');
+  const qty = newRow.querySelector('.dish-qty');
+
+  if (select) select.value = '';
+  if (qty) qty.value = '0';
+
+  return newRow;
+}
+
+if (addDishBtn && orderBuilder) {
+  addDishBtn.addEventListener('click', () => {
+    const newRow = createOrderRow();
+    if (!newRow) return;
+
+    orderBuilder.insertBefore(newRow, addDishBtn);
+    renumberOrderRows();
+    calculateOrder();
+  });
+}
+
 if (orderForm) {
+  orderForm.addEventListener('input', calculateOrder);
+  orderForm.addEventListener('change', calculateOrder);
+  calculateOrder();
+
   orderForm.addEventListener('submit', (event) => {
-    const rows = [...orderForm.querySelectorAll('.order-row')];
-    const selectedItems = rows.map((row) => {
-      const dish = row.querySelector('.dish-select')?.value || '';
-      const qty = Number(row.querySelector('.dish-qty')?.value || 0);
-      if (!dish || qty <= 0) return null;
-      return `${qty}x ${dish}`;
-    }).filter(Boolean);
-
-    const summary = orderForm.querySelector('#narudzba-summary');
-    if (summary) summary.value = selectedItems.join('\n');
-
-    if (summary && !summary.value) {
+    const result = calculateOrder();
+    if (!result.items.length) {
       event.preventDefault();
       alert('Molimo odaberite barem jedno jelo i količinu.');
     }
