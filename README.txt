@@ -18,3 +18,7 @@ Napomene:
 - Glavna panorama je assets/img/panorama-restoran.png
 - Tekstove i cijene možeš mijenjati direktno u HTML fajlovima.
 - Forma rezervacije je statična. Za pravo slanje treba spojiti Formspree/Basin/Cloudflare Workers.
+
+
+WEB3FORMS:
+U datoteci narudzba.html zamijeni OVDJE_UBACI_WEB3FORMS_ACCESS_KEY svojim Web3Forms access key-em. Nakon toga forma salje online narudzbe direktno na mail povezan s Web3Forms racunom.
