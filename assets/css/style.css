@@ -128,3 +128,38 @@
   .order-total-box{padding:16px;align-items:flex-start;flex-direction:column;gap:6px}
   .order-total-box strong{font-size:24px}
 }
+
+
+/* Dorada: centriranje polja za vrijeme na stranici online narudžbe */
+.form label.centered-picker{
+  text-align:left;
+}
+.form label.centered-picker input[type="time"]{
+  width:100%;
+  min-height:70px;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  text-align-last:center;
+  padding:0 18px;
+  line-height:70px;
+  box-sizing:border-box;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.form label.centered-picker input[type="time"]::-webkit-date-and-time-value{
+  width:100%;
+  text-align:center;
+  display:block;
+}
+.form label.centered-picker input[type="time"]::-webkit-calendar-picker-indicator{
+  position:absolute;
+  right:18px;
+  opacity:.65;
+  filter:invert(1);
+}
+.form label.centered-picker input[type="time"]{
+  position:relative;
+}
