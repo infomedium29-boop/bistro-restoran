@@ -15,7 +15,7 @@ Upload na GitHub/Cloudflare:
 
 Napomene:
 - Scroll trigger je u assets/js/main.js
-- Glavna panorama je assets/img/panorama-restoran.png
+- Glavna panorama je assets/img/panorama-restoran.avif
 - Tekstove i cijene možeš mijenjati direktno u HTML fajlovima.
 - Forma rezervacije je statična. Za pravo slanje treba spojiti Formspree/Basin/Cloudflare Workers.
 
